@@ -1,11 +1,11 @@
 --import Data.Functor
 --import Data.List (intercalate)
-import Control.Monad.Trans.State
+--import Control.Monad.Trans.State
 
 
--- module Main where
--- main :: IO ()
--- main = putStrLn "blah"
+module Main where
+main :: IO ()
+main = putStrLn "blah"
 jazz :: Int -> Int
 jazz n = n * 2
 
@@ -426,18 +426,21 @@ mx >>= f = case mx of
 -}
 
 
-type Counter = StateT Int IO
+-- type Counter = StateT Int IO
 
-incrementCounter :: Counter ()
-incrementCounter = do
-  n <- get
-  put (n + 1)
+-- incrementCounter :: Counter ()
+-- incrementCounter = do
+--   n <- get
+--   put (n + 1)
 
-stater :: IO ()
-stater = do
-  (result, count) <- runStateT incrementCounter 0
-  putStrLn $ "Result: " ++ show result
-  putStrLn $ "Count: " ++ show count
+-- stater :: IO ()
+-- stater = do
+--   (result, count) <- runStateT incrementCounter 0
+--   putStrLn $ "Result: " ++ show result
+--   putStrLn $ "Count: " ++ show count
 
 addone :: (Num a) => a -> a
 addone a = a + 1
+
+addtwo :: (Num a) => a -> a
+addtwo a = addone $ addone a
