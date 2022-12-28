@@ -439,3 +439,5 @@ stater = do
   putStrLn $ "Result: " ++ show result
   putStrLn $ "Count: " ++ show count
 
+addone :: (Num a) => a -> a
+addone a = a + 1
